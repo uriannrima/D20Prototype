@@ -15,7 +15,7 @@ public class MultipleSelector : BaseSelector<IMultipleSelectionHandler>, IMultip
         SelectedObjects = Selectables.FindAll(
             selectedObject =>
             {
-                if (!selectedObject.renderer.isVisible) return false;
+                if (!selectedObject.GetComponent<Renderer>().isVisible) return false;
 
                 Vector3 position = Camera.main.WorldToScreenPoint(selectedObject.transform.position);
                 position.y = InvertY(position.y);

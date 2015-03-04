@@ -8,17 +8,17 @@ public class AttackBehavior : BaseBehavior
 
     public void Attack(GameObject target)
     {
-        if (AttackTarget) AttackTarget.renderer.material.color = Color.white;
+        if (AttackTarget) AttackTarget.GetComponent<Renderer>().material.color = Color.white;
 
         AttackTarget = target;
-        AttackTarget.renderer.material.color = Color.yellow;
+        AttackTarget.GetComponent<Renderer>().material.color = Color.yellow;
     }
 
     public void StopAttack()
     {
         if (!AttackTarget) return;
 
-        AttackTarget.renderer.material.color = Color.white;
+        AttackTarget.GetComponent<Renderer>().material.color = Color.white;
 
         this.AttackTarget = null;
     }

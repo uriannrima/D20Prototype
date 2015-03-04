@@ -41,7 +41,7 @@ public class WaypointManager : BaseManager<WaypointManager>
             // Doesn't exist, create a waypoint for it.
             GameObject waypoint = Instantiate(Waypoint, waypointPosition + new Vector3(0, YOffSet, 0), Quaternion.identity) as GameObject;
             waypoint.transform.parent = Waypoints.transform;
-            waypoint.renderer.material.color = waypointColor;
+            waypoint.GetComponent<Renderer>().material.color = waypointColor;
             waypoint.GetComponent<WaypointMark>().Owner = waypointOwner;
 
             WaypoingPool.Add(waypointOwner, waypoint);

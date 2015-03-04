@@ -7,20 +7,20 @@ public class LOSEnemy : LOSEntity
     void Update()
     {
         // Being rendered
-        if (renderer.enabled)
+        if (GetComponent<Renderer>().enabled)
         {
             // Hidden or fogged.
             if (RevealState == RevealStates.Hidden ||
                 RevealState == RevealStates.Fogged)
             {
-                renderer.enabled = false;
+                GetComponent<Renderer>().enabled = false;
             }
         }
         else
         {
             if (RevealState == RevealStates.Unfogged)
             {
-                renderer.enabled = true;
+                GetComponent<Renderer>().enabled = true;
             }
         }
     }

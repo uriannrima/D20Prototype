@@ -80,7 +80,7 @@ public class BaseMonoBehaviour : MonoBehaviour
 
     protected void ChangeColor(Color color)
     {
-        this.renderer.material.color = color;
+        this.GetComponent<Renderer>().material.color = color;
     }
 
     public static void Log(object message)

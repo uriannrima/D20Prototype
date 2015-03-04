@@ -5,30 +5,29 @@ public class KeyboardManager : BaseManager<KeyboardManager>
 {
     void Update()
     {
-        HandleEdging();
         HandleCamera();
-        HandleCollision();
+        HandleDebugMode();
     }
 
     bool toggleCollision = false;
-    private void HandleCollision()
+    private void HandleDebugMode()
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
             toggleCollision = !toggleCollision;
             Physics.IgnoreLayerCollision(11, 11, toggleCollision);
         }
-    }
 
-    /// <summary>
-    /// Handle edging toggle.
-    /// </summary>
-    void HandleEdging()
-    {
         if (Input.GetKeyDown(KeyCode.X))
         {
             EdgeManager.Instance.Edging = !EdgeManager.Instance.Edging;
         }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Camera.main.GetComponent<FogOfWarEffect>().enabled = !Camera.main.GetComponent<FogOfWarEffect>().enabled;
+        }
+
     }
 
     /// <summary>
