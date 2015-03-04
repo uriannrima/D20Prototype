@@ -62,7 +62,6 @@ public class MeshBuilder : MonoBehaviour
         // Asign the mesh to the gameObject.
         var meshFilter = GetComponent<MeshFilter>();
         var meshRenderer = GetComponent<MeshRenderer>();
-        var meshCollider = GetComponent<MeshCollider>();
 
         meshFilter.mesh = mesh;
     }

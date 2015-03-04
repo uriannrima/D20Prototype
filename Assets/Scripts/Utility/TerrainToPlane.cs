@@ -34,7 +34,29 @@ public class TerrainToPlane : MonoBehaviour
     /// <summary>
     /// Size of each square of the mesh.
     /// </summary>
-    private float cellSize = 1f;
+    private float cellSize = 0.5f;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public bool ShouldRaycast;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public float RaycastHeight = 64f;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public float RaycastDistance = 128f;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public LayerMask RaycastLayers = -1;
+
+    Vector3 DownDirection = Vector3.down;
 
     void Start()
     {
@@ -114,6 +136,8 @@ public class TerrainToPlane : MonoBehaviour
         // REMEMBER, we need THREE points for EACH triangle.
         triangles = new int[numberTriangles * 3];
 
+        var planePosition = transform.position;
+
         // Loop through each vertices first
         // Left to Right, Top to Bottom
         for (int y = 0; y < verticalVertices; y++)
@@ -124,8 +148,28 @@ public class TerrainToPlane : MonoBehaviour
                 int verticeIndex = (y * horizontalVertices) + x;
 
                 // Define this vertice position
-                var position = new Vector3(x * cellSize, 0, y * cellSize);
-                if (Terrain) position.y = Terrain.SampleHeight(position);
+                var position = new Vector3(x * cellSize, 0, y * cellSize) + planePosition;
+
+                if (ShouldRaycast)
+                {
+                    position.y += RaycastHeight;
+
+                    RaycastHit hit;
+
+                    if (Physics.Raycast(position, DownDirection, out hit, RaycastDistance, RaycastLayers))
+                    {
+                        position.y = hit.point.y;
+                    }
+                    else
+                    {
+                        position.y = Terrain.SampleHeight(position);
+                    }
+                }
+                else
+                {
+                    position.y = Terrain.SampleHeight(position);
+                }
+
                 vertices[verticeIndex] = position;
 
                 // Face the normal up.
