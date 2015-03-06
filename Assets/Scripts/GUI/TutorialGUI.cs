@@ -21,8 +21,5 @@ public class TutorialGUI : MonoBehaviour
 
         message = (!Physics.GetIgnoreLayerCollision(11, 11)) ? "Enabled" : "Disabled";
         GUI.Label(new Rect(0, 180, 300, 30), "C - Toggles Character Collision: " + message);
-
-        message = (Camera.main.GetComponent<FogOfWarEffect>().enabled) ? "Enabled" : "Disabled";
-        GUI.Label(new Rect(0, 195, 300, 30), "F - Toggles Fog of War Mask: " + message);
     }
 }

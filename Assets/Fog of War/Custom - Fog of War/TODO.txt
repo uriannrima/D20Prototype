@@ -1,0 +1,19 @@
+1) Create an plane over the terrain + buildings
+	2 possible ways:
+		1) Cache height and small plane
+			1) Copy height data from the terrain and from buildings
+			2) Position an plane in the camera, that will emulate the fog above the things
+			3) Get height data from the cache, put on the plane
+		2) Create plane with height already
+			1) Create plane
+			2) On creation set height of each vertice with the height from terrain or building
+			3) Create multiple planes to bigger terrains (since there is a limit of vertices per mesh)
+	1) Terrain To Plane creates an Plane over the Terrain and Buildings
+	2) Sometimes, gets a litle bit clumsy, out of position
+2) Create an texture with the plane size
+3) Manipulate texture to open holes on visible points
+	Using a bit mask:
+		0 - Non Visible
+		1 - Visible
+	Later, look about alpha, but let start it easy
+4) Line of Sight on visible points, for the time, lets just make a circle, then we see about LOS
