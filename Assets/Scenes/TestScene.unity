@@ -97,6 +97,7 @@ GameObject:
   - 4: {fileID: 56059058}
   - 218: {fileID: 56059057}
   - 154: {fileID: 56059056}
+  - 114: {fileID: 56059059}
   m_Layer: 10
   m_Name: Terrain
   m_TagString: Untagged
@@ -159,6 +160,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 759156933}
   m_RootOrder: 1
+--- !u!114 &56059059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56059055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae5795a84f98d54c82efc33526ca53e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Terrain: {fileID: 0}
+  Texture: {fileID: 0}
 --- !u!1 &57868090
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +513,33 @@ Transform:
   - {fileID: 1997906619}
   m_Father: {fileID: 1068662546}
   m_RootOrder: 0
+--- !u!1 &216819903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 562552497}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 216819904}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &216819904
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 562552497}
+  m_GameObject: {fileID: 216819903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
 --- !u!1 &230072720
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +771,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!114 &418998294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,7 +919,7 @@ Transform:
   m_Children:
   - {fileID: 1544680653}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &538237093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,7 +1148,7 @@ Transform:
   m_Children:
   - {fileID: 728738990}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!4 &728738990
 Transform:
   m_ObjectHideFlags: 0
@@ -1151,7 +1192,7 @@ Transform:
   - {fileID: 56059058}
   - {fileID: 1748453404}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &810370350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,7 +1584,7 @@ Transform:
   m_Children:
   - {fileID: 212886846}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &1068662547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2158,7 +2199,6 @@ GameObject:
   - 114: {fileID: 1866117476}
   - 114: {fileID: 1866117475}
   - 114: {fileID: 1866117474}
-  - 114: {fileID: 1866117483}
   m_Layer: 11
   m_Name: Character
   m_TagString: Character
@@ -2293,20 +2333,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1866117473}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1866117483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1866117473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d896faa75ea396d4baf03f14a79a912d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: {x: 1, y: 20}
-  lineOfSightCheck: 2
-  isActive: 1
 --- !u!1 &1882987739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,7 +2596,6 @@ GameObject:
   - 92: {fileID: 1997906617}
   - 124: {fileID: 1997906616}
   - 81: {fileID: 1997906615}
-  - 114: {fileID: 1997906620}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2643,20 +2668,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 212886846}
   m_RootOrder: 0
---- !u!114 &1997906620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1997906614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c0d02b39c7ba8449a6d3fc9e2d72c8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shader: {fileID: 4800000, guid: e2d2b5a643c600d49b42ee8d15a57e5a, type: 3}
-  unexploredColor: {r: .200000003, g: .200000003, b: .200000003, a: 1}
-  exploredColor: {r: .200000003, g: .200000003, b: .200000003, a: 1}
 --- !u!1 &2106598229
 GameObject:
   m_ObjectHideFlags: 0

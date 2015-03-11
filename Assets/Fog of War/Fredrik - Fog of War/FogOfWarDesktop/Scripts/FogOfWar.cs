@@ -82,7 +82,7 @@ public class FogOfWar : BaseManager<FogOfWar>
         plane.AddComponent<MeshRenderer>();
 
         // We don't care for shadows
-        plane.GetComponent<MeshRenderer>().castShadows = false;
+        plane.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         plane.GetComponent<MeshRenderer>().receiveShadows = false;
 
         // Set material on plane
@@ -128,7 +128,7 @@ public class FogOfWar : BaseManager<FogOfWar>
             {
                 ts[t] = (r * vertCount) + c;
                 ts[t + 1] = (r * vertCount) + c + 1;
-                ts[t + 2] = ((r + 1) * vertCount) + c; 
+                ts[t + 2] = ((r + 1) * vertCount) + c;
 
                 ts[t + 3] = ((r + 1) * vertCount) + c;
                 ts[t + 4] = (r * vertCount) + c + 1;
@@ -143,7 +143,7 @@ public class FogOfWar : BaseManager<FogOfWar>
         mesh.uv = uv;
         mesh.triangles = ts;
         mesh.RecalculateNormals();
-        
+
         // Setup fog data
         fogData = new Vector2[nodeCount * nodeCount];
 
@@ -317,7 +317,7 @@ public class FogOfWar : BaseManager<FogOfWar>
         int c;
 
         WorldToFog(pos, out r, out c);
-        
+
         int n = r + (nodeCount * c);
 
         if (r >= 0 && r < nodeCount && c >= 0 && c < nodeCount && n < fogData.Length)

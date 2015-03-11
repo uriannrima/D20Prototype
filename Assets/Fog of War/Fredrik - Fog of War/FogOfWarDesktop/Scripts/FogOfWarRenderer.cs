@@ -8,7 +8,7 @@ public class FogOfWarRenderer : MonoBehaviour
 
     void Update()
     {
-        if (fogOfWar != null && fogOfWar.enabled && fogOfWar.gameObject.active)
+        if (fogOfWar != null && fogOfWar.enabled && fogOfWar.gameObject.activeInHierarchy)
         {
             GetComponent<Renderer>().enabled = fogOfWar.IsRevealed(transform.position);
         }
